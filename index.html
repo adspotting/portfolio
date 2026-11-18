@@ -5,27 +5,27 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Alexandra Robinson | GTM &amp; Product Marketing Leader</title>
 <meta name="description" content="GTM and technical product marketing leadership across AI, enterprise SaaS, fintech, developer ecosystems, and complex technology.">
-<meta name="theme-color" content="#161514">
+<meta name="theme-color" content="#111118">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap">
 <style>
 :root {
   color-scheme: dark;
-  --background: #161514;
-  --surface: #201e1c;
-  --raised: #282523;
-  --line: #413b36;
-  --text: #f4ede3;
-  --body: #d5cbc1;
-  --muted: #bcb0a5;
-  --accent: #e9ad8f;
-  --accent-hover: #ffd1b7;
-  --heading: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --background: #111118;
+  --surface: #191922;
+  --raised: #222132;
+  --line: #363445;
+  --text: #f7f5ff;
+  --body: #d9d6e5;
+  --muted: #b9b4ca;
+  --accent: #c6a9ff;
+  --accent-hover: #ded0ff;
+  --heading: "IBM Plex Sans", "Segoe UI", sans-serif;
   --sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --mono: ui-monospace, "SFMono-Regular", Consolas, monospace;
   --gutter: max(5vw, 24px);
-  --content: 1180px;
+  --content: 1240px;
 }
 
 * { box-sizing: border-box; }
@@ -51,8 +51,9 @@ header {
   justify-content: space-between;
   gap: 24px;
   padding: 13px var(--gutter);
-  background: var(--background);
+  background: rgba(17, 17, 24, .94);
   border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(12px);
 }
 .brand-lockup { display: flex; align-items: center; gap: 12px; color: var(--text); }
 .brand-mark {
@@ -62,8 +63,8 @@ header {
   width: 36px;
   height: 36px;
   place-items: center;
-  font: 500 21px/1 var(--heading);
-  letter-spacing: -.11em;
+  font: 700 18px/1 var(--heading);
+  letter-spacing: -.095em;
   padding-right: .08em;
 }
 .brand-mark::before, .brand-mark::after {
@@ -76,17 +77,36 @@ header {
 .brand-mark::before { top: 0; left: 0; border-width: 1px 0 0 1px; }
 .brand-mark::after { right: 0; bottom: 0; border-width: 0 1px 1px 0; }
 .brand-name { font-size: 13px; font-weight: 600; line-height: 1.2; }
-.brand-name small { display: block; margin-top: 4px; color: var(--muted); font: 10px/1.2 var(--mono); }
+.brand-name small { display: block; margin-top: 4px; color: var(--muted); font: 10px/1.2 var(--mono); letter-spacing: .06em; text-transform: uppercase; }
 nav { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 22px; }
 nav a { color: var(--body); font-size: 13px; text-decoration: none; }
 nav a:hover { text-decoration: underline; }
 
-.hero { border-bottom: 1px solid var(--line); padding: clamp(72px, 9vw, 136px) var(--gutter); }
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  padding: clamp(72px, 9vw, 132px) var(--gutter);
+  background: radial-gradient(ellipse at 90% 30%, #25203a 0%, var(--background) 60%);
+}
+.hero::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0 0 0 37%;
+  background-image:
+    linear-gradient(to right, rgba(198, 169, 255, .1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(198, 169, 255, .1) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(130deg, transparent 12%, #000 65%, rgba(0, 0, 0, .2));
+  content: "";
+  pointer-events: none;
+}
 .hero-inner {
   display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
   align-items: center;
-  gap: clamp(40px, 6vw, 94px);
+  gap: clamp(34px, 5.6vw, 80px);
   max-width: var(--content);
   margin: auto;
 }
@@ -94,15 +114,16 @@ h1, h2, h3, footer strong {
   margin: 0;
   color: var(--text);
   font-family: var(--heading);
-  font-weight: 500;
+  font-weight: 600;
   text-wrap: balance;
 }
 h1 {
   margin: 16px 0 20px;
-  font-size: clamp(53px, 5.65vw, 85px);
-  line-height: .99;
-  letter-spacing: -.043em;
+  font-size: clamp(48px, 5.45vw, 78px);
+  line-height: 1.02;
+  letter-spacing: -.055em;
 }
+h1 span { color: var(--accent); }
 h2 {
   max-width: 940px;
   margin: 12px 0 30px;
@@ -132,14 +153,46 @@ li { margin-bottom: 8px; }
 .cta {
   display: inline-flex;
   margin-top: 28px;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--accent);
-  color: var(--text);
-  font-size: 15px;
-  font-weight: 650;
+  align-items: center;
+  gap: 20px;
+  min-height: 46px;
+  padding: 10px 16px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: var(--accent);
+  color: var(--background);
+  font-size: 14px;
+  font-weight: 700;
   text-decoration: none;
 }
-.cta:hover { border-color: var(--accent-hover); }
+.cta:hover { background: var(--accent-hover); color: var(--background); }
+.outcomes {
+  position: relative;
+  max-width: 560px;
+  padding: 8px;
+  border: 1px solid #514867;
+  border-radius: 8px;
+  background: rgba(24, 22, 38, .96);
+}
+.outcomes-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 10px 11px 14px;
+  color: var(--body);
+  font: 500 11px/1.35 var(--mono);
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+.outcomes-label::before {
+  width: 7px;
+  height: 7px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  box-shadow: 0 0 0 3px rgba(198, 169, 255, .13);
+  content: "";
+}
 .metric-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -147,12 +200,18 @@ li { margin-bottom: 8px; }
   background: var(--line);
   border: 1px solid var(--line);
 }
-.metric-grid article { min-width: 0; padding: 21px 17px; background: var(--surface); }
+.metric-grid article {
+  min-width: 0;
+  min-height: 121px;
+  padding: 19px 16px;
+  background: #211e30;
+}
 .metric-grid strong, .metric-grid span, .metric-grid small { display: block; }
 .metric-grid strong {
-  color: var(--text);
-  font: 500 clamp(29px, 3vw, 44px)/1.05 var(--heading);
-  letter-spacing: -.04em;
+  color: var(--accent-hover);
+  font: 600 clamp(24px, 2.65vw, 42px)/1.05 var(--heading);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -.05em;
 }
 .metric-grid span { margin-top: 5px; font-size: 14px; line-height: 1.4; }
 .metric-grid small { margin-top: 7px; color: var(--muted); font-size: 11px; line-height: 1.4; }
@@ -180,6 +239,9 @@ main > section { padding: clamp(60px, 8vw, 108px) var(--gutter); }
   background: var(--surface);
   border-block: 1px solid var(--line);
 }
+#system { background: #211b30; }
+#system .system-grid article { background: #171320; border-color: #4b405d; }
+#system .system-grid h3 { font-size: clamp(20px, 2vw, 26px); }
 .case {
   display: grid;
   grid-template-columns: 58px minmax(0, 1fr);
@@ -191,7 +253,8 @@ main > section { padding: clamp(60px, 8vw, 108px) var(--gutter); }
   border: 1px solid var(--line);
 }
 .case:last-child { margin-bottom: 0; }
-.case-no { color: var(--muted); font: 500 30px/1 var(--heading); }
+.case .eyebrow { letter-spacing: .075em; }
+.case-no { color: var(--accent); font: 500 24px/1.2 var(--mono); letter-spacing: -.075em; }
 .case h3 { margin-top: 8px; font-size: clamp(31px, 3.5vw, 46px); }
 .org { margin: 8px 0 0; color: var(--muted); font-size: 14px; font-weight: 650; }
 .case-grid ul, .deck-copy ul { margin: 0 0 1em; padding-left: 1.2em; }
@@ -295,6 +358,7 @@ figcaption em { margin-top: 10px; color: var(--accent); font-size: 12px; font-st
   pointer-events: none;
 }
 
+#writing { background: #14131d; }
 .writing-intro { max-width: 810px; margin: 14px 0 0; color: var(--muted); font-size: 18px; }
 .writing-pillars { margin-bottom: 24px; }
 .writing-pillars article > span { color: var(--accent); font: 500 11px/1.4 var(--mono); }
@@ -342,7 +406,7 @@ footer p { margin: 3px 0 0; }
   main > section[id] { scroll-margin-top: 0; }
   .hero-inner, .intro-grid, .case-grid { grid-template-columns: 1fr; }
   .hero-inner { align-items: start; }
-  .metric-grid { max-width: 560px; }
+  .hero::before { inset-inline-start: 0; opacity: .6; }
   .case { grid-template-columns: 1fr; }
   .case-no { display: none; }
   .case-grid { gap: 0; }
@@ -354,9 +418,9 @@ footer p { margin: 3px 0 0; }
   nav { gap: 5px 14px; }
   nav a { font-size: 12px; }
   .hero { padding-block: 58px; }
-  h1 { font-size: clamp(43px, 11vw, 63px); }
-  .metric-grid article { padding: 17px 13px; }
-  .metric-grid strong { font-size: clamp(24px, 7vw, 34px); }
+  h1 { font-size: clamp(39px, 10.2vw, 60px); text-wrap: initial; }
+  .metric-grid article { min-height: 104px; padding: 14px 10px; }
+  .metric-grid strong { font-size: clamp(22px, 6.2vw, 32px); }
   .capabilities { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .case { padding: 20px 17px; }
   .before-after-grid, .site-support-grid, .sample-grid, .sample-grid.hogo-gallery,
@@ -377,13 +441,16 @@ footer p { margin: 3px 0 0; }
 <header><b class="brand-lockup"><span class="brand-mark" aria-hidden="true">AR</span><span class="brand-name">Alexandra Robinson<small>GTM systems</small></span></b><nav><a href="#work">Work</a><a href="#writing">Writing + Enablement</a><a href="#system">Operating System</a><a href="#leadership">Leadership</a><a href="#scenarios">Applied Scenarios</a></nav></header><section class="hero"><div class="hero-inner">
 <div>
 <p class="eyebrow">Senior technical product marketing leader</p>
-<h1>Technical product marketing that turns complex products into commercial momentum.</h1>
+<h1>Technical product marketing that turns complex products into <span>commercial momentum.</span></h1>
 <p class="lede">A strategy-and-execution product marketer with 13+ years across enterprise SaaS, fintech, AI, developer ecosystems, and technical software. Builds the full GTM system: market insight, positioning, launches, adoption, lifecycle, enablement, measurement, and the operating cadence that keeps teams aligned.</p>
-<a class="cta" href="#work">Explore selected work →</a>
+<a class="cta" href="#work">Explore selected work <span aria-hidden="true">→</span></a>
 </div>
+<section class="outcomes" aria-labelledby="outcomes-label">
+<p class="outcomes-label" id="outcomes-label">Selected outcomes</p>
 <div class="metric-grid">
-<article><strong>6x</strong><span>inbound lift after website launch</span><small>Six Five Media - owner-supplied</small></article><article><strong>60%</strong><span>churn reduction in six months</span><small>ConsumerDirect</small></article><article><strong>45K -&gt; 138K+</strong><span>YouTube subscriber growth</span><small>Six Five Media</small></article><article><strong>$1M</strong><span>marketing-influenced revenue</span><small>Six Five Media - owner-supplied</small></article>
+<article><strong>6x</strong><span>inbound lift after website launch</span><small>Six Five Media - owner-supplied</small></article><article><strong>60%</strong><span>churn reduction in six months</span><small>ConsumerDirect</small></article><article><strong>45K → 138K+</strong><span>YouTube subscriber growth</span><small>Six Five Media</small></article><article><strong>$1M</strong><span>marketing-influenced revenue</span><small>Six Five Media - owner-supplied</small></article>
 </div>
+</section>
 </div></section><main><section><div class="intro">
 <p class="eyebrow">Executive profile</p>
 <h2>I build the narrative, the motion, and the measurement system.</h2>

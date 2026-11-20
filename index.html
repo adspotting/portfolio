@@ -358,6 +358,22 @@ figcaption em { margin-top: 10px; color: var(--accent); font-size: 12px; font-st
   pointer-events: none;
 }
 
+.project-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px 36px;
+  max-width: var(--content);
+  margin-inline: auto;
+  padding: clamp(24px, 4vw, 46px);
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+.project-card h2 { margin: 8px 0 12px; }
+.project-summary { max-width: 600px; margin: 0; }
+.project-card .cta { flex-shrink: 0; margin-top: 0; }
+
 #writing { background: #14131d; }
 .writing-intro { max-width: 810px; margin: 14px 0 0; color: var(--muted); font-size: 18px; }
 .writing-pillars { margin-bottom: 24px; }
@@ -438,7 +454,7 @@ footer p { margin: 3px 0 0; }
 </style>
 </head>
 <body>
-<header><b class="brand-lockup"><span class="brand-mark" aria-hidden="true">AR</span><span class="brand-name">Alexandra Robinson<small>GTM systems</small></span></b><nav><a href="#work">Work</a><a href="#writing">Writing + Enablement</a><a href="#system">Operating System</a><a href="#leadership">Leadership</a><a href="#scenarios">Applied Scenarios</a></nav></header><section class="hero"><div class="hero-inner">
+<header><b class="brand-lockup"><span class="brand-mark" aria-hidden="true">AR</span><span class="brand-name">Alexandra Robinson<small>GTM systems</small></span></b><nav><a href="#work">Work</a><a href="#personal-project">Personal Project</a><a href="#writing">Writing + Enablement</a><a href="#system">Operating System</a><a href="#leadership">Leadership</a><a href="#scenarios">Applied Scenarios</a></nav></header><section class="hero"><div class="hero-inner">
 <div>
 <p class="eyebrow">Senior technical product marketing leader</p>
 <h1>Technical product marketing that turns complex products into <span>commercial momentum.</span></h1>
@@ -664,7 +680,18 @@ footer p { margin: 3px 0 0; }
 <figcaption><b>Drive Automotive Innovation from the Inside Out</b><span>A concise product narrative connecting automotive software, silicon, security, safety, and reliability into a unified market story.</span><em>Watch video ↗</em></figcaption>
 </figure>
 </div>
-</div></article></section><section id="writing"><div class="section-head">
+</div></article></section>
+<section id="personal-project" aria-labelledby="campaign-proof-heading">
+  <div class="project-card">
+    <div>
+      <p class="eyebrow">Personal project</p>
+      <h2 id="campaign-proof-heading">Campaign Proof</h2>
+      <p class="project-summary">I built Campaign Proof to help B2B marketers see how their brand appears in AI answers, prioritize content improvements, and track campaign ROI.</p>
+    </div>
+    <a class="cta" href="https://getcampaignproof.com/">Visit Campaign Proof <span aria-hidden="true">↗</span></a>
+  </div>
+</section>
+<section id="writing"><div class="section-head">
 <p class="eyebrow">Writing + revenue enablement</p>
 <h2>Writing that gives the GTM strategy somewhere to go.</h2>
 <p class="writing-intro">I turn complex technology, market context, and customer proof into materials that help buyers understand, sellers persuade, and launches travel. The work spans executive sales narratives, technical thought leadership, developer stories, customer proof, and launch communications.</p>
